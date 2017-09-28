@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true">
+
+    </constant>
+
+    <package name="LoginPackage" extends="struts-default" namespace="/">
+
+        <action name="loginAction" class="Action.LoginAction" method="loginMethod">
+            <result name="success">/welcome.jsp</result>
+            <result name="error">/Login.jsp</result>
+            <result name="input">/Login.jsp</result>
+        </action>
+        <action name="registAction" class="Action.LoginAction" method="registMethod">
+            <result name="registOK">
+                /Login.jsp
+            </result>
+            <result name="input">
+                /Login.jsp
+            </result>
+
+        </action>
+        <action name="code" class="Action.CheckCode" method="createCode">
+            <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="inputName">inputStream</param>
+            </result>
+        </action>
+        <action name="*Action" class="Action.BookAction" method="{1}">
+            <result name="addOK" type="chain">findAllBookAction</result>
+            <result name="findOK">/showBook.jsp</result>
+        </action>
+
+    </package>
+</struts>

@@ -1,0 +1,103 @@
+package Action;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+
+/**
+ * Created by Administrator on 2017/9/12.
+ */
+
+
+public class LoginAction extends ActionSupport {
+    private String username;
+    private String password;
+
+
+
+    private String code;
+    private String type;
+    private String info;
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+
+    public void validate() {
+        if (username == null || username.trim().equals("")) {
+            this.addFieldError("usernameError", "用户名不能为空");
+        }
+        if (password == null || password.trim().equals("")) {
+            this.addFieldError("passwordError", "密码不能为空");
+
+
+        }
+    }
+
+    public String loginMethod() throws Exception {
+        //获取登陆页面提交的数据(struct的参数拦截器已经完成)
+        //判断登陆数据是否合法
+
+        String Code2 = (String) ActionContext.getContext().getSession().get("checkCode");
+        ActionContext.getContext().getSession().get(type);
+
+
+
+        if (username.equals("石磊") && password.equals("123") && code.equals(Code2)) {
+            //把用户名放入session
+            //书71页 struct2中访问session的方法
+            ActionContext.getContext().getSession().put("user", username);
+            ActionContext.getContext().getSession().put("type",type);
+            return SUCCESS;
+
+
+        } else {
+            //错误信息放到request域的方法（struct2访问request的方法）
+            ActionContext.getContext().put("error", "用户名或密码或验证码错误");
+            return ERROR;
+        }
+    }
+    public String registMethod()throws Exception{
+        info="请使用注册的用户名和密码登陆！";
+        System.out.println("进入了注册逻辑程序");
+
+        return "registOK";
+    }
+
+}
