@@ -9,9 +9,9 @@
         <action name="LoginAction" class="Action.LoginAction" method="registMethod">
             <result name="loginOK">/welcome.jsp
             </result>
-            <result name="loginFail">/login.jsp
+            <result name="loginFail">/regist.jsp
             </result>
-            <result name="input">/login.jsp
+            <result name="input">/regist.jsp
             </result>
         </action>
         <action name="code" class="Action.CheckCode" method="createCode">

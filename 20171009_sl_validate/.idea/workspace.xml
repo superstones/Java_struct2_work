@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71d9425e-4ce9-4007-a3fb-0ee3f1f0a9da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../20171009-sl-validate-regist/out/artifacts/20171009_sl_validate_regist_war_exploded/WEB-INF/classes/Action/LoginAction.class" afterPath="$PROJECT_DIR$/../20171009-sl-validate-regist/out/artifacts/20171009_sl_validate_regist_war_exploded/WEB-INF/classes/Action/LoginAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../20171009-sl-validate-regist/out/production/20171009-sl-validate-regist/Action/LoginAction.class" afterPath="$PROJECT_DIR$/../20171009-sl-validate-regist/out/production/20171009-sl-validate-regist/Action/LoginAction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../20171009-sl-validate-regist/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../20171009-sl-validate-regist/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../20171009-sl-validate-regist/out/artifacts/20171009_sl_validate_regist_war_exploded/welcome.jsp" afterPath="$PROJECT_DIR$/../20171009-sl-validate-regist/out/artifacts/20171009_sl_validate_regist_war_exploded/welcome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../20171009-sl-validate-regist/src/Action/LoginAction.java" afterPath="$PROJECT_DIR$/../20171009-sl-validate-regist/src/Action/LoginAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../20171009-sl-validate-regist/web/welcome.jsp" afterPath="$PROJECT_DIR$/../20171009-sl-validate-regist/web/welcome.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/20171009_sl_validate_war_exploded/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/20171009_sl_validate_war_exploded/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/20171009_sl_validate_war_exploded/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/20171009_sl_validate_war_exploded/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/20171009_sl_validate/struts.xml" afterPath="$PROJECT_DIR$/out/production/20171009_sl_validate/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -720,12 +710,12 @@
       <workItem from="1507536638144" duration="1250000" />
       <workItem from="1507542481124" duration="2204000" />
       <workItem from="1507547231958" duration="1321000" />
-      <workItem from="1507550800247" duration="969000" />
+      <workItem from="1507550800247" duration="1053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12609000" />
+    <option name="totallyTimeSpent" value="12693000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -738,6 +728,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -758,7 +749,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
