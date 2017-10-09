@@ -11,6 +11,6 @@
     <title>$Title$</title>
 </head>
 <body>
-欢迎登陆${sessionScope.user}登录系统
+${sessionScope.user}注册成功
 </body>
 </html>

@@ -12,11 +12,11 @@
     <title></title>
 </head>
 <body>
-<s:fielderror fieldName="error"></s:fielderror>
+<s:fielderror fieldName="error"> </s:fielderror>
 <s:form action="LoginAction"  method="post">
     <s:textfield label="用户名" name="username"> </s:textfield>
     <s:password label="密码" name="password" > </s:password>
-     <s:submit value="登陆" ></s:submit>
+     <s:submit value="登陆" > </s:submit>
 
 </s:form>
 </body>

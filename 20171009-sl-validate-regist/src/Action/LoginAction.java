@@ -112,7 +112,8 @@ public class LoginAction extends ActionSupport {
 
     }
     public String registMethod(){
-        return "success";
+        ActionContext.getContext().getSession().put("user", username);
+        return "loginOK";
 
 
     }
@@ -132,7 +133,6 @@ public class LoginAction extends ActionSupport {
         if(!Pattern.matches("^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$",emailAddress.trim())){
             this.addFieldError("emailAddress", "邮箱格式不正确");
         }
-
 
     }
 }
