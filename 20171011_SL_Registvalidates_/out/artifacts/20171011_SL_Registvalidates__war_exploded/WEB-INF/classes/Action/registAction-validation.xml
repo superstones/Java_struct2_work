@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+
+    <field name="username">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>必须输入用户名</message>
+        </field-validator>
+        <!-- 指定name属性必须匹配正则表达式 -->
+        <field-validator type="regex">
+            <param name="regexExpression"><![CDATA[(\w{2,25})]]></param>
+            <message>您输入的用户名只能是字母和数字，且长度必须在2到25之间</message>
+        </field-validator>
+    </field>
+    <field name="password">
+        <field-validator type="requiredstring">
+            <message>密码不能为空</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="maxLength">15</param>
+            <param name="minLength">6</param>
+            <message>密码长度必须大于6位小于15位</message>
+        </field-validator>
+    </field>
+    <field name="rPassword">
+        <field-validator type="fieldexpression">
+            <param name="expression"><![CDATA[
+            rPassword==password]]></param>
+            <message>两次密码不一致</message>
+        </field-validator>
+    </field>
+    <field name="realName">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>姓名不能为空</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regexExpression"><![CDATA[
+        ([a-zA-z0-9]{2,5})
+        ]]></param>
+            <message>格式错误，长度为2-5</message>
+        </field-validator>
+    </field>
+    <field name="emailAddress">
+        <field-validator type="requiredstring">
+            <message>邮箱不能为空</message>
+        </field-validator>
+        <field-validator type="email">
+            <message>邮箱格式不正确</message>
+        </field-validator>
+    </field>
+    <field name="telephone">
+        <field-validator type="requiredstring">
+            <message>电话不为空</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regexExpression"><![CDATA[  13[0-9]{9} ]]></param>
+            <message>电话不合法</message>
+        </field-validator>
+    </field>
+
+
+    <field name="code">
+        <field-validator type="requiredstring">
+            <message>验证码不能为空</message>
+        </field-validator>
+
+    </field>
+</validators>
