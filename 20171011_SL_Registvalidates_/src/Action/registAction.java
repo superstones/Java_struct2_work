@@ -16,22 +16,29 @@ import java.util.List;
 public class registAction extends ActionSupport implements ModelDriven<User> {
 
       User u = new User();
-      UserDao userDao =new UserDao();
-      UserService userService =new UserService();
+      UserDao userDao=new UserDao();
+       UserService uService =new UserService();
+
     String Code2 = (String) ActionContext.getContext().getSession().get("checkCode");
     @Override
     public User getModel() {
         return u;
 
     }
+    @Override
+    public void validate() {
+        System.out.println("进入注册Validate");
+        if (u.getUsername() == null || u.getUsername().trim().equals("")) {
+            this.addFieldError("usernameError", "用户名不能为空");
+        }
+        if (u.getPassword() == null || u.getPassword().trim().equals("")) {
+            this.addFieldError("passwordError", "密码不能为空");
 
-
+        }
+    }
     public String registMethod(){
 
-
-        ActionContext.getContext().getSession().put("user",u);
-        ActionContext.getContext().getSession().put("username",u.getUsername());
-        ActionContext.getContext().getSession().put("password",u.getPassword());
+     userDao.addUser(u);
 
         return "registOK";
 

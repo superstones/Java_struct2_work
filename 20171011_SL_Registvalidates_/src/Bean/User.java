@@ -9,6 +9,14 @@ public class User {
     private String password;
     private String rPassword;
     private String realName;
+
+    @Override
+    public String toString() {
+        return   username ;
+
+                }
+
+
     private String telephone;
     private String emailAddress;
     private String code;

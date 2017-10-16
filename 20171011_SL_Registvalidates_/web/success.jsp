@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-注册成功
+注册成功，用户名为${sessionScope.username}
 
 <a href="login.jsp">登陆</a>
 </body>
