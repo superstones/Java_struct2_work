@@ -17,9 +17,9 @@ import java.util.UUID;
  */
 public class registAction extends ActionSupport implements ModelDriven<User> {
     private String title;
-    private File[] upload;
-    private String[] uploadContentType;
-    private String[] uploadFileName;
+    private File upload;
+    private String uploadContentType;
+    private String uploadFileName;
     private String savePath;
 
     public String getTitle() {
@@ -30,27 +30,27 @@ public class registAction extends ActionSupport implements ModelDriven<User> {
         this.title = title;
     }
 
-    public File[] getUpload() {
+    public File getUpload() {
         return upload;
     }
 
-    public void setUpload(File[] upload) {
+    public void setUpload(File upload) {
         this.upload = upload;
     }
 
-    public String[] getUploadContentType() {
+    public String getUploadContentType() {
         return uploadContentType;
     }
 
-    public void setUploadContentType(String[] uploadContentType) {
+    public void setUploadContentType(String uploadContentType) {
         this.uploadContentType = uploadContentType;
     }
 
-    public String[] getUploadFileName() {
+    public String getUploadFileName() {
         return uploadFileName;
     }
 
-    public void setUploadFileName(String[] uploadFileName) {
+    public void setUploadFileName(String uploadFileName) {
         this.uploadFileName = uploadFileName;
     }
 
@@ -62,7 +62,7 @@ public class registAction extends ActionSupport implements ModelDriven<User> {
         this.savePath = savePath;
     }
 
-      User u = new User();
+    User u = new User();
       UserDao userDao=new UserDao();
        UserService uService =new UserService();
 
@@ -87,24 +87,22 @@ public class registAction extends ActionSupport implements ModelDriven<User> {
         ActionContext.getContext().getSession().put("user",u);
 
      userDao.addUser(u);
-        for (int i = 0; i < uploadFileName.length; i++)
-            try {
-                FileInputStream fis = new FileInputStream(upload[i]);
-                String newFileName = UUID.randomUUID().toString() + "_" + uploadFileName[i];
-                FileOutputStream fos = new FileOutputStream(savePath + "/" + newFileName);
-                byte[] buffer = new byte[1024];
-                int len = 0;
-                while ((len = fis.read(buffer)) > 0) {
-                    fos.write(buffer, 0, len);
+        try {
+            FileInputStream fis = new FileInputStream(upload);
+            String newFileName = UUID.randomUUID().toString()+"_"+uploadFileName;
+            FileOutputStream fos = new FileOutputStream(savePath + "/" + newFileName);
+            byte[] buffer =new byte[1024];
+            int len=0;
+            while ((len=fis.read(buffer))>0){
+                fos.write(buffer,0,len);
 
-                }
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
 
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return "registOK";
 

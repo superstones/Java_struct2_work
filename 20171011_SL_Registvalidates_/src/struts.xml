@@ -5,10 +5,12 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <constant name="struts.multipart.saveDir" value="E:/upload"></constant>
     <package name="registAction" namespace="/" extends="struts-default">
 
         <action name="registAction" class="Action.registAction" method="registMethod">
-     <result name="registOK">/success.jsp</result>
+            <param name="savePath">e:/uploadRealFile</param>
+            <result name="registOK">/success.jsp</result>
 
             <result name="input">/regist.jsp
             </result>
