@@ -7,13 +7,60 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by Administrator on 2017/10/11.
  */
 public class registAction extends ActionSupport implements ModelDriven<User> {
+    private String title;
+    private File[] upload;
+    private String[] uploadContentType;
+    private String[] uploadFileName;
+    private String savePath;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public File[] getUpload() {
+        return upload;
+    }
+
+    public void setUpload(File[] upload) {
+        this.upload = upload;
+    }
+
+    public String[] getUploadContentType() {
+        return uploadContentType;
+    }
+
+    public void setUploadContentType(String[] uploadContentType) {
+        this.uploadContentType = uploadContentType;
+    }
+
+    public String[] getUploadFileName() {
+        return uploadFileName;
+    }
+
+    public void setUploadFileName(String[] uploadFileName) {
+        this.uploadFileName = uploadFileName;
+    }
+
+    public String getSavePath() {
+        return savePath;
+    }
+
+    public void setSavePath(String savePath) {
+        this.savePath = savePath;
+    }
 
       User u = new User();
       UserDao userDao=new UserDao();
@@ -37,13 +84,35 @@ public class registAction extends ActionSupport implements ModelDriven<User> {
         }
     }
     public String registMethod(){
+        ActionContext.getContext().getSession().put("user",u);
 
      userDao.addUser(u);
+        for (int i = 0; i < uploadFileName.length; i++)
+            try {
+                FileInputStream fis = new FileInputStream(upload[i]);
+                String newFileName = UUID.randomUUID().toString() + "_" + uploadFileName[i];
+                FileOutputStream fos = new FileOutputStream(savePath + "/" + newFileName);
+                byte[] buffer = new byte[1024];
+                int len = 0;
+                while ((len = fis.read(buffer)) > 0) {
+                    fos.write(buffer, 0, len);
+
+                }
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
 
         return "registOK";
 
-
     }
+
+
+
+
 }
 
 

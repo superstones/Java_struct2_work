@@ -39,12 +39,7 @@
             <param name="trim">true</param>
             <message>姓名不能为空</message>
         </field-validator>
-        <field-validator type="regex">
-            <param name="regexExpression"><![CDATA[
-        ([a-zA-z0-9]{2,5})
-        ]]></param>
-            <message>格式错误，长度为2-5</message>
-        </field-validator>
+
     </field>
     <field name="emailAddress">
         <field-validator type="requiredstring">

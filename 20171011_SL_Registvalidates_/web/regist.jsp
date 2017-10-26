@@ -12,7 +12,7 @@
 <head><sx:head></sx:head></head>
 <body>
 <s:fielderror fieldName="error"> </s:fielderror>
-<s:form action="registAction" method="post">
+<s:form action="registAction" method="post" enctype="multipart/form-data">
     <tr>
         <td><s:textfield label="用户名" name="username"> </s:textfield></td>
     </tr>
@@ -27,12 +27,32 @@
     <tr>
         <td><s:textfield label="姓名" name="realName"> </s:textfield></td>
     </tr>
+
+    <tr>
+        <td><s:textfield label="手机号码" name="telephone"> </s:textfield></td>
+    </tr>
+    <tr>
+        <td><s:textfield label="固定电话" name="tel"></s:textfield></td>
+    </tr>
+    <tr>
+        <td><s:textfield label="省" name="address"></s:textfield></td>
+    </tr>
+    <tr>
+        <td><s:textfield label="市" name="address"></s:textfield></td>
+    </tr>
+    <tr>
+        <td><s:textfield label="区" name="address"></s:textfield></td>
+    </tr>
+    <tr>
+        <td><s:textfield label="街道" name="address"></s:textfield></td>
+    </tr>
     <tr>
         <td><s:textfield label="Email地址" name="emailAddress"> </s:textfield></td>
     </tr>
     <tr>
-        <td><s:textfield label="手机号码" name="telephone"> </s:textfield></td>
-    </tr>
+        <s:file label="个人照片" name="upload"></s:file></tr>
+
+
     <tr>
         <td><s:textfield label="验证码" name="code"> </s:textfield></td>
         <td><img src="code.action" onclick="this.src='code.action'"></td>

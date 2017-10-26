@@ -9,12 +9,30 @@ public class User {
     private String password;
     private String rPassword;
     private String realName;
+    private Tel tel;
+    private Addresss address;
+
+    public Tel getTel() {
+        return tel;
+    }
+
+    public void setTel(Tel tel) {
+        this.tel = tel;
+    }
+
+    public Addresss getAddress() {
+        return address;
+    }
+
+    public void setAddress(Addresss address) {
+        this.address = address;
+    }
 
     @Override
     public String toString() {
-        return   username ;
+        return username;
 
-                }
+    }
 
 
     private String telephone;

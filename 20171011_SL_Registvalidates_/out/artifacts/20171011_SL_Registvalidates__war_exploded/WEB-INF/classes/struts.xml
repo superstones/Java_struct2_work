@@ -6,6 +6,7 @@
 
 <struts>
     <package name="registAction" namespace="/" extends="struts-default">
+
         <action name="registAction" class="Action.registAction" method="registMethod">
      <result name="registOK">/success.jsp</result>
 
@@ -27,7 +28,6 @@
                 <param name="inputName">inputStream</param>
             </result>
         </action>
-
 
 
     </package>
