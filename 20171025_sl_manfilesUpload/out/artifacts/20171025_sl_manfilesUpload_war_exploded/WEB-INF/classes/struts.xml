@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.multipart.saveDir" value="E:/upload"></constant>
+    <package name="UploadAction" namespace="/" extends="struts-default">
+        <action name="UploadAction" class="Action.UploadAction" method="upload">
+        <param name="savePath">e:/uploadRealFile</param>
+
+        <interceptor-ref name="fileUpload">
+            <param name="allowedExtensions">
+                txt,doc,jpg,docx
+            </param>
+            <param name="maximumSize">
+                10240000
+            </param>
+            <param name="allowedTypes">
+                text/plain,application/msword,image/jpeg
+            </param>
+        </interceptor-ref>
+        <interceptor-ref name="defaultStack">
+
+        </interceptor-ref>
+        <result name="uploadOK">
+            /success.jsp</result>
+        <result name="input">
+            /Upload.jsp
+        </result>
+
+    </action>
+    </package>
+</struts>
