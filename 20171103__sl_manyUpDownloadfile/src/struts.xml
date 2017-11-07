@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.multipart.saveDir" value="e:/upload/"/>
+    <constant name="struts.multipart.maxSize" value="209715200" />
+    <package name="load" extends="struts-default">
+        <interceptors>
+            <interceptor class="Interceptor.LoginInterceptor" name="login"/>
+        </interceptors>
+        <action class="Action.UploadAction" name="uploadAction" method="uploadMethod">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedExtensions">txt,doc,docx,jpg,pptx</param>
+                <param name="maximumSize">10240000</param>
+                <param name="allowedTypes">text/plain,image/jpeg,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <param name="savePath">e:/uploadRealFile/</param>
+            <result name="uploadOK" type="redirectAction">uploadListAction</result>
+            <result name="input">/upload.jsp</result>
+        </action>
+        <action class="Action.UploadAction" name="uploadListAction" method="uploadList">
+            <param name="savePath">e:/uploadRealFile/</param>
+            <result name="uploadListOK">/download.jsp</result>
+        </action>
+        <action class="Action.DownloadAction" name="downloadAction">
+            <result name="success" type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="inputName">targetFile</param>
+                <param name="contentDisposition">attachment;filename=${downFileName}</param>
+            </result>
+            <result name="login">/login.jsp</result>
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="login"/>
+        </action>
+        <action class="Action.LoginAction" name="loginAction" method="loginMethod">
+            <result name="loginFail">/login.jsp</result>
+            <result name="input">/login.jsp</result>
+            <result name="loginOK" type="chain">uploadListAction</result>
+        </action>
+    </package>
+</struts>
