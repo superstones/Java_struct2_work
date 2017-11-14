@@ -15,6 +15,5 @@
             <result name="input">/login.jsp
             </result>
         </action>
-
     </package>
 </struts>

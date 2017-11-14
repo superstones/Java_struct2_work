@@ -21,9 +21,9 @@
 <s:form action="LoginAction" method="POST">
     <s:textfield name="username" key="user"/>
     <s:password name="password" key="pass"/>
-    <s:text name="type"></s:text><select name="type">
-    <option><s:text name="admin"></s:text></option>
-    <option><s:text name="User2"></s:text></option>
+    <s:text name="type"/><select name="type">
+    <option><s:text name="admin"/></option>
+    <option><s:text name="User2"/></option>
 </select>
     <s:submit key="submit"/>
 </s:form>
