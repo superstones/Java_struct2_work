@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.custom.i18n.resources" value="Login"/>
+    <package name="login" extends="struts-default">
+        <action name="LoginAction" class="Action.LoginAction" method="loginMethod">
+            <result name="loginOK">/welcome.jsp
+            </result>
+            <result name="loginFail">/login.jsp
+            </result>
+            <result name="input">/login.jsp
+            </result>
+        </action>
+
+    </package>
+</struts>
